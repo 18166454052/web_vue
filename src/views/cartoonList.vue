@@ -1,11 +1,6 @@
 <template>
 <div>
-    <mu-appbar style="width: 100%;" color="teal">
-  <mu-button icon slot="left" @click="$router.go(-1)">
-    <mu-icon value="arrow_back" size="48"></mu-icon>
-  </mu-button>
-  
-</mu-appbar>
+    <v-back></v-back>
     <div :class="{
         'tv-lists':list.length>0 && isNumber(list[0]['cartoon_num']),
         'variety-lists':list.length>0 && !isNumber(list[0]['cartoon_num'])

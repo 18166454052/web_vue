@@ -18,6 +18,8 @@ import 'muse-ui-message/dist/muse-ui-message.css';
 import Toast from 'muse-ui-toast';
 import 'muse-ui-loading/dist/muse-ui-loading.css'; // load css
 import Loading from 'muse-ui-loading';
+import Back from "@/component/back.vue"
+Vue.component("v-back",Back)
 Vue.use(Loading);
 Vue.use(Helpers);
 Vue.use(Toast,{

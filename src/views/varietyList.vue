@@ -1,5 +1,6 @@
 <template>
 <div>
+     <v-back></v-back>
     <div class="variety-lists" v-show="list.length>0">
         
         <v-variety-list 

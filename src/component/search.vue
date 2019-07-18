@@ -2,7 +2,7 @@
     <div class="search-container">
        <div class="search">
         <form class="form" >
-            <input v-model="value" v-focus="true" class="input"  placeholder="输入电影名称" />
+            <input v-model="value" v-focus="true" class="input"  :placeholder="'输入'+type+'名称 支持汉字和拼音搜索'" />
         </form>   
            
        </div>
@@ -26,7 +26,15 @@ export default {
         return{
             value:"",
             page:1,
-            size:30
+            size:30,
+            map:{
+                '0':'电影',
+                '1':'电视剧',
+                '2':'综艺',
+                '3':'动漫'
+
+            }
+            
         }
     },
     methods:{
@@ -47,6 +55,11 @@ export default {
             }
            
            
+        }
+    },
+    computed:{
+        type:function(){
+             return this.map[this.state['active_tab']]
         }
     }
 }

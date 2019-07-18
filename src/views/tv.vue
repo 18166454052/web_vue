@@ -27,6 +27,7 @@ import tv_item from "../component/tvItem.vue"
 import category from "../component/tvCategory.vue"
 import Tabs from "../component/tab.vue"
 import {tvCategory, tvItem} from "@/api/tv/index.js"
+import Cookies from 'js-cookie'
 export default {
   name: 'tv',
   components:{
@@ -118,9 +119,8 @@ export default {
       })
     },
     toPLayer:function(info,e){
-      //this.state.url = info["movie_url"];
-      console.log(info)
-      this.state["item_id"] = info.id
+      Cookies.set("item_id",info.id)
+      //this.state["item_id"] = info.id
       this.$router.push("/tvlist")
     }
   },

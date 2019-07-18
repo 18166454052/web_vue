@@ -19,6 +19,7 @@
 <script>
 import {tvList} from "@/api/tv/index.js"
 import TvList from "@/component/tvList"
+import Cookies from 'js-cookie'
 export default {
     components:{
         "v-tv-list":TvList
@@ -27,7 +28,8 @@ export default {
         return {
            list:[],
            Loading:null,
-           url:''
+           url:'',
+           item_id:''
 
         }
     },
@@ -41,7 +43,7 @@ export default {
                 className: '',
             
             });
-            tvList({id:this.state["item_id"]}).then(res=>{
+            tvList({id:this.item_id}).then(res=>{
                  if(this.Loading){
                     this.Loading.close()
                 }
@@ -59,13 +61,13 @@ export default {
         },
         goPlayer:function(info){
             this.url = info["tv_url"]
-            this.state.tv_list_url = info["tv_url"]
-            this.state.url = info["tv_url"]
+            Cookies.set("url",info["tv_url"])
             this.$router.push("/player")
         }
     },
     created:function(){
-        this.url =  this.state.tv_list_url 
+        this.url = Cookies.get("url")
+        this.item_id = Cookies.get("item_id")
         this.getList()
     }
     

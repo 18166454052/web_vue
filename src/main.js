@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'lib-flexible'
 import 'normalize.css'
+import './assets/material-icon.css'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -10,7 +11,7 @@ import {state} from "@/store/state.js"
 import 'muse-ui/lib/styles/base.less';
 import 'muse-ui/lib/styles/theme.less';
 import { LoadMore, ExpansionPanel,Button, Form, TextField, Icon, 
-  Snackbar, Checkbox, Progress, Tabs} from 'muse-ui';
+  Snackbar, Checkbox, Progress, Tabs,  AppBar} from 'muse-ui';
 import Helpers from 'muse-ui/lib/Helpers';
 import VueLazyLoad from 'vue-lazyload'
 import 'muse-ui-message/dist/muse-ui-message.css';
@@ -44,6 +45,7 @@ Vue.use(Snackbar)
 Vue.use(Checkbox)
 Vue.use(Progress)
 Vue.use(Tabs)
+Vue.use(AppBar)
 Vue.prototype.state = state
 Vue.config.productionTip = false
 import "@/assets/css/index.css"

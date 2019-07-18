@@ -1,5 +1,11 @@
 <template>
 <div>
+    <mu-appbar style="width: 100%;" color="teal">
+  <mu-button icon slot="left" @click="$router.go(-1)">
+    <mu-icon value="arrow_back" size="48"></mu-icon>
+  </mu-button>
+  
+</mu-appbar>
     <div :class="{
         'tv-lists':list.length>0 && isNumber(list[0]['cartoon_num']),
         'variety-lists':list.length>0 && !isNumber(list[0]['cartoon_num'])
@@ -23,6 +29,7 @@
 <script>
 import { cartoonList } from "@/api/cartoon/index.js"
 import CartoonList from "@/component/cartoonList"
+import Cookies from 'js-cookie'
 export default {
     components:{
         "v-cartoon-list":CartoonList
@@ -31,7 +38,8 @@ export default {
         return {
            list:[],
            Loading:null,
-           url:''
+           url:'',
+           item_id:''
 
         }
     },
@@ -48,7 +56,7 @@ export default {
                 className: '',
             
             });
-            cartoonList({id:this.state["item_id"]}).then(res=>{
+            cartoonList({id:this.item_id}).then(res=>{
                  if(this.Loading){
                     this.Loading.close()
                 }
@@ -65,10 +73,8 @@ export default {
 
         },
         goPlayer:function(info){
-            console.log(info)
             this.url = info["cartoon_url"]
-            //this.state.cartoon_list_url = info["cartoon_url"]
-            //this.state.url = info["cartoon_url"]
+            Cookies.set("url",info["cartoon_url"])
             this.$router.push("/player")
         },
         isNumber(obj) {
@@ -78,7 +84,8 @@ export default {
    
     },
     created:function(){
-        this.url =  this.state.cartoon_list_url 
+        this.url = Cookies.get("url")
+        this.item_id = Cookies.get("item_id")
         this.getList()
     }
     

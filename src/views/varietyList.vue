@@ -19,6 +19,7 @@
 <script>
 import { varietyList } from "@/api/variety/index.js"
 import VarietyList from "@/component/varietyList"
+import Cookies from 'js-cookie'
 export default {
     components:{
         "v-variety-list":VarietyList
@@ -27,7 +28,8 @@ export default {
         return {
            list:[],
            Loading:null,
-           url:''
+           url:'',
+           item_id:''
 
         }
     },
@@ -41,7 +43,7 @@ export default {
                 className: '',
             
             });
-            varietyList({id:this.state["item_id"]}).then(res=>{
+            varietyList({id:this.item_id}).then(res=>{
                  if(this.Loading){
                     this.Loading.close()
                 }
@@ -58,15 +60,14 @@ export default {
 
         },
         goPlayer:function(info){
-            console.log(info)
             this.url = info["variety_url"]
-            //this.state.variety_list_url = info["variety_url"]
-            //this.state.url = info["variety_url"]
+            Cookies.set("url",info["variety_url"])
             this.$router.push("/player")
         }
     },
     created:function(){
-        this.url =  this.state.variety_list_url 
+        this.url =  Cookies.get("url")
+        this.item_id =  Cookies.get("item_id")
         this.getList()
     }
     

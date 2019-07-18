@@ -26,6 +26,7 @@ import searchBtn from "../component/searchBtn.vue"
 import movie_item from "../component/movieItem.vue"
 import category from "../component/category.vue"
 import Tabs from "../component/tab.vue"
+import Cookies from 'js-cookie'
 import {movieCategory, movieItem} from "@/api/movie/index.js"
 export default {
   name: 'HelloWorld',
@@ -120,7 +121,9 @@ export default {
       })
     },
     toPLayer:function(info,e){
-      this.state.url = info["movie_url"];
+      //this.state.url = info["movie_url"];
+      Cookies.set("type",0)
+      Cookies.set("url",info["movie_url"])
       this.$router.push("/player")
     }
   },

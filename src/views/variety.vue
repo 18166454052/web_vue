@@ -27,6 +27,7 @@ import variety_item from "../component/varietyItem.vue"
 import category from "../component/varietyCategory.vue"
 import Tabs from "../component/tab.vue"
 import {varietyCategory, varietyItem} from "@/api/variety/index.js"
+import Cookies from 'js-cookie'
 export default {
   name: 'tv',
   components:{
@@ -118,9 +119,7 @@ export default {
       })
     },
     toPLayer:function(info,e){
-      //this.state.url = info["movie_url"];
-      console.log(info)
-      this.state["item_id"] = info.id
+      Cookies.set("item_id",info.id)
       this.$router.push("/varietyList")
     }
   },

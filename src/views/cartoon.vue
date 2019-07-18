@@ -27,6 +27,7 @@ import cartoon_item from "../component/cartoonItem.vue"
 import category from "../component/cartoonCategory.vue"
 import Tabs from "../component/tab.vue"
 import {cartoonCategory, cartoonItem} from "@/api/cartoon/index.js"
+import Cookies from 'js-cookie'
 export default {
   name: 'tv',
   components:{
@@ -125,6 +126,7 @@ export default {
     }
   },
   created:function(){
+    
      this.state['active_tab'] = 3
      this.getCategryList();
      this.getCartoonItem();

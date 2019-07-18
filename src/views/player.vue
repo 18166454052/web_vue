@@ -8,6 +8,7 @@
     </div>
 </template>
 <script>
+import Cookies from 'js-cookie'
 export default {
     data(){
         return{
@@ -15,7 +16,7 @@ export default {
         }
     },
     created:function(){
-       this.url = "http://jx.598110.com/?url=" + this.state.url
+       this.url = "http://jx.598110.com/?url=" + Cookies.get("url")
     }
 }
 </script>

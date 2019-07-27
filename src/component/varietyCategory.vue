@@ -94,52 +94,7 @@ export default {
 }
 </script>
 <style scoped>
-.category-list{
-    display:flex;
-    align-items: center;
-}
-.label{
-   flex:0 0 130px;
-   display: flex;
-   justify-content: left;
-   font-size:28px;
 
-}
-.label>div{
-   flex:0 0 100px;
-   border-radius: 16px 0 16px 16px;
-   background-color: #7f7f8b;
-   color: #fff;
-}  
-.wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    white-space: nowrap; /*当子元素超过父元素宽度的时候，不会折行*/
-}
-.list {
-      
-    flex:1 1 600px;
-    background-color: #fff;
-    padding-left:0px;
-    margin:12px 0px;
-}
-.itembox {
-        display:inline-block;
-        padding: 0 16px;
-        line-height: 30px;
-        font-family:PingFangSC-Regular;
-        font-size: 28px;
-        color:#333 !important;
- }
-.current{
-    color: #ff5c38;
-    font-weight: 700;
-}
-.title{
-    font-size:24px;
-    margin:15px 0;
-}
   
 </style>
 

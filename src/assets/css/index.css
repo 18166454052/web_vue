@@ -196,7 +196,7 @@ img[lazy=loading] {
 
 */
 .loadMore{
-    margin-bottom:80px;
+    margin-bottom:30px;
     background:rgb(243, 241, 241);
 }
 /**
@@ -212,10 +212,11 @@ tabs
     max-width:1550px;  
   }
 .tabs .mu-tab-wrapper{
-    min-height:80px;
-    font-size:30px;
+    min-height:25px;
+    font-size:15px;
+    line-height:25px;
 }
-@media (max-width:1024px)  {
+/* @media (max-width:1024px)  {
     .tabs .mu-tab-wrapper{
         min-height:80px;
         font-size:30px;
@@ -230,7 +231,7 @@ tabs
     .loadMore{
         margin-bottom:40px;
     }
-} 
+}  */
 .tabs .mu-tab-active{
    font-weight:600
 }

@@ -10,7 +10,7 @@ Vue.use(Toast,{
 })
 // create an axios instance
 const service = axios.create({
-  baseURL: "http://127.0.0.1:7001/", // api的base_url
+  baseURL: process.env.BASE_API, // api的base_url
   timeout: 3600000, // request timeout
   widthCredentials: false  // 设置 withCredentials 使请求带上 `cookies`
  

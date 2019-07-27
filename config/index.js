@@ -3,7 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
+const publicPath = require('./prod.env.js').publicPath
 module.exports = {
   dev: {
 
@@ -43,7 +43,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: 'http://127.0.0.1:80/dist/',
+    assetsPublicPath: publicPath + 'dist/',
 
     /**
      * Source Maps

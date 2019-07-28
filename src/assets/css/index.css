@@ -359,3 +359,7 @@ tv-list
     font-size:28px;
     margin:15px 0;
 }
+.mu-expansion-panel-header {
+    font-size:30px;
+    line-height:45px;
+}

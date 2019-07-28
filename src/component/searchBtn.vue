@@ -28,7 +28,7 @@ export default {
 .btn{
     height:72px;
     background:#fff;
-    font-size:24px;
+    font-size:28px;
     line-height: 72px;
     color:#999;
 }

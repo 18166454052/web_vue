@@ -196,7 +196,7 @@ img[lazy=loading] {
 
 */
 .loadMore{
-    margin-bottom:30px;
+    margin-bottom:40px;
     background:rgb(243, 241, 241);
 }
 /**
@@ -212,9 +212,9 @@ tabs
     max-width:1550px;  
   }
 .tabs .mu-tab-wrapper{
-    min-height:25px;
-    font-size:15px;
-    line-height:25px;
+    min-height:40px;
+    font-size:28px;
+    line-height:40px;
 }
 /* @media (max-width:1024px)  {
     .tabs .mu-tab-wrapper{
@@ -348,7 +348,7 @@ tv-list
         padding: 0 16px;
         line-height: 30px;
         font-family:PingFangSC-Regular;
-        font-size: 32px;
+        font-size: 28px;
         color:#333 !important;
  }
  .category-list .current{
@@ -356,6 +356,6 @@ tv-list
     font-weight: 700;
 }
 .category-list .title{
-    font-size:24px;
+    font-size:28px;
     margin:15px 0;
 }

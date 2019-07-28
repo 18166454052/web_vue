@@ -196,7 +196,7 @@ img[lazy=loading] {
 
 */
 .loadMore{
-    margin-bottom:40px;
+    margin-bottom:60px;
     background:rgb(243, 241, 241);
 }
 /**
@@ -212,9 +212,9 @@ tabs
     max-width:1550px;  
   }
 .tabs .mu-tab-wrapper{
-    min-height:40px;
-    font-size:28px;
-    line-height:40px;
+    min-height:60px;
+    font-size:30px;
+    line-height:60px;
 }
 /* @media (max-width:1024px)  {
     .tabs .mu-tab-wrapper{

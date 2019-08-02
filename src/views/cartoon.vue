@@ -13,7 +13,9 @@
     class="loadMore">
       <div class="movie-list">
         <div class="item"  v-for="item in cartoonList" :key="item['cartoon_title']">
-          <cartoon-item :cartooninfo="item" v-tap="(e)=>toPLayer(item,e)"></cartoon-item>
+          <cartoon-item :cartooninfo="item" v-tap="(e)=>toPLayer(item,e)"
+            @click.native="toPLayer(item,$event)"
+            ></cartoon-item>
         </div>
       </div>   
     </mu-load-more>

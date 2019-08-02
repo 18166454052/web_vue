@@ -6,7 +6,7 @@
         </form>   
            
        </div>
-       <div class="btn" v-tap="(e)=>search(e)">
+       <div class="btn" v-tap="(e)=>search(e)" @click="search">
             搜索
        </div>
     </div>
@@ -40,7 +40,6 @@ export default {
     methods:{
         search:function(e){
             if(!this.value.trim()){
-                console.log("111111")
                 this.$toast.message('搜索内容不能为空');
             }
             else{
@@ -104,7 +103,8 @@ export default {
     font-size:28px;
     display:flex;
     justify-content: center;
-    background:teal /*#0af*/
+    background:teal; /*#0af*/
+    cursor: pointer;
 }
 
 </style>

@@ -13,7 +13,7 @@
     class="loadMore">
       <div class="movie-list">
         <div class="item"  v-for="item in movielist" :key="item['movie_title']">
-          <movie-item :movieinfo="item" v-tap="(e)=>toPLayer(item,e)"></movie-item>
+          <movie-item :movieinfo="item" v-tap="(e)=>toPLayer(item,e)" @click.native="toPLayer(item,$event)"></movie-item>
         </div>
       </div>   
     </mu-load-more>
@@ -81,7 +81,6 @@ export default {
       })
     },
     getItem:function(info){
-      console.log(info)
       // 点击了查询的分类
       this.category=info;
       this.page = 1;
